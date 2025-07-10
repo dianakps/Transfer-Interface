@@ -1,0 +1,197 @@
+/* @import "@fortawesome/fontawesome-free/css/all.min.css"; */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.woff2");
+}
+
+/* Toggle Theme */
+
+/* Theme Variables */
+[data-bs-theme="light"] {
+  --bs-body-bg: #dbdbdb;
+  --bs-body-color: #000000;
+  --chart-box-bg: #caa1b2;
+  --accent-color: #22c1c3;
+  --primary-color: #090979;
+  --highlight-color: #e4abb9;
+  --menu-bg: #c78ba4;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1a1e5c;
+  --bs-body-color: #f8f9fa;
+  --chart-box-bg: #2b2b70;
+  --accent-color: #22c1c3;
+  --primary-color: #ffffff;
+  --highlight-color: #b85c84;
+  --menu-bg: #1c1c40;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#themeToggleBtn {
+  color: var(--bs-body-color);
+}
+
+header {
+  /* background-color: rgb(199, 190, 207); */
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.login-icon {
+  background-color: var(--highlight-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+.nav-link {
+  color: var(--bs-body-color);
+}
+
+main {
+  width: 95vw;
+  height: 95vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+.side-menu {
+  width: 20%;
+  height: max-content;
+  background-color: var(--menu-bg);
+  border-radius: 10px;
+  border-radius: 10px;
+}
+
+.main-board {
+  width: 90%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 20px;
+}
+
+.chart-box {
+  width: max-content;
+  min-width: 90%;
+  height: 300px;
+  padding: 10px;
+  background-color: var(--chart-box-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+}
+
+.chart-1,
+.chart-2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.btn-danger {
+  background-color: var(--error-color);
+  color: white;
+}
+
+button.btn-accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Responsive Styles for 380–500px */
+
+@media screen and (max-width: 500px) {
+  header {
+    height: auto;
+    padding: 15px;
+    display: flex;
+    position: relative;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .mobile-navbar {
+    margin: 0 auto;
+    text-align: end;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    z-index: 2;
+  }
+
+  .mobile-navbar:hover {
+    background-color: var(--menu-bg);
+  }
+
+  .login-icon {
+    margin-left: 60px;
+  }
+
+  main {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .side-menu {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .main-board {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .chart-box {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .chart-1,
+  .chart-2 {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .login-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

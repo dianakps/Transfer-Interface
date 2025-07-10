@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./transfer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <title>LOG IN AGENCY | TRANSFER</title>
+  </head>
+  <body>
+    <header class="d-flex justify-content-between align-items-center px-3 py-2">
+      <div>
+        <button
+          class="navbar-toggler me-2 d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#sideMenuCollapse"
+          aria-controls="sideMenuCollapse"
+          aria-expanded="false"
+          aria-label="Toggle side menu"
+        >
+          <i class="fas fa-bars text-white fs-3"></i>
+        </button>
+      </div>
+
+      <div class="logo">LOG IN AGENCY | TRANSFER</div>
+
+      <nav class="mobile-navbar">
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavCollapse"
+          aria-controls="topNavCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-gears text-white fs-4"></i>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-flex" id="topNavCollapse">
+          <ul class="nav justify-content-end flex-column flex-lg-row">
+            <li>
+              <button id="themeToggleBtn" class="btn">
+                <i class="fa-solid fa-brush"></i>
+              </button>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Upload</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lookup</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Record Table</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Flight Info Tool</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">API Docs</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><div class="login-icon"></div></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="side-menu collapse d-lg-block" id="sideMenuCollapse">
+        <nav class="nav flex-column vh-100">
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fas fa-truck"></i> Total Transfers</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-users"></i> Total Clients</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-location-dot"></i> Total Locations</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-file-export"></i> Total Imports</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-calendar-day"></i> Today's Transfers</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-calendar-week"></i> This Week's Transfers</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-calendar-days"></i> This Month's Transfers</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-calculator"></i> Avg Clients Per Transfer</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-calendar-xmark"></i> Records Missing Date</a
+          >
+          <a class="nav-link ps-4 mt-3" href="#"
+            ><i class="fa-solid fa-plane-slash"></i> Records Missing Flight
+            No</a
+          >
+        </nav>
+      </div>
+      <div class="main-board">
+        <div class="chart-box">
+          <div class="chart-1">
+            <canvas id="myChart1"></canvas>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-2">
+            <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+        <div class="chart-box"></div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="transfer.js"></script>
+    <!-- Toggle Button -->
+    <script>
+      // Apply saved theme on load
+      const savedTheme = localStorage.getItem("bsTheme") || "light";
+      document.documentElement.setAttribute("data-bs-theme", savedTheme);
+
+      // Toggle button logic
+      document
+        .getElementById("themeToggleBtn")
+        .addEventListener("click", () => {
+          const current =
+            document.documentElement.getAttribute("data-bs-theme");
+          const next = current === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-bs-theme", next);
+          localStorage.setItem("bsTheme", next);
+        });
+    </script>
+  </body>
+</html>
